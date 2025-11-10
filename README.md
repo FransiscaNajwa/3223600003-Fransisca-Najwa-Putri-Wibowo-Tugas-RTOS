@@ -22,11 +22,9 @@ Langkah Percobaan
 4. Amati:
 Output device
 Log pada Serial Monitor
-Performa antar core
 5. Dokumentasikan:
 Foto rangkaian / wiring
 Kode tiap percobaan
-Hasil & analisis
 Video demo
 6. Upload seluruh percobaan ke GitHub dan submit link di Ethol
 
