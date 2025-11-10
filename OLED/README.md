@@ -6,6 +6,7 @@ Percobaan ini menunjukkan bagaimana ESP32-S3 menjalankan dua task pada dua core 
 | ------ | ----: | ---------------------------------- |
 | Core 0 | Task0 | Menampilkan teks `"CORE 0: aktif"` |
 | Core 1 | Task1 | Menampilkan teks `"CORE 1: aktif"` |
+
 OLED digunakan sebagai output yang diakses bergantian oleh kedua task melalui xSemaphore (mutex).
 
 🛠️ Hardware Setup

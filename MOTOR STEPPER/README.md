@@ -8,6 +8,7 @@ Program menggunakan 2 task:
 | ----------- | ---: | ------------------------------------- | --------------------------------- |
 | TaskStepper |    1 | Menjalankan pergerakan stepper terus  | `stepper.run()` berjalan smooth   |
 | TaskButton  |    0 | Membaca tombol & mengganti arah motor | Toggle arah & kirim target posisi |
+
 Motor stepper bergerak maju–mundur antara posisi 0 hingga 800 step setiap kali tombol ditekan.
 
 🔌 Mapping Hardware
