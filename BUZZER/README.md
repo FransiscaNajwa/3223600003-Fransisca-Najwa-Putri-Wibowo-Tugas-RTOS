@@ -26,4 +26,8 @@ Percobaan ini mendemonstrasikan penggunaan dua core ESP32-S3 untuk menghasilkan 
 🎥 Video Demo
 Gdrive: https://drive.google.com/drive/folders/1K_wdP9ttsc-NksF2BDL43nwUQEU0aomJ?usp=sharing
 
+Core 1
 ![alt text](image.png)
+
+Core 0
+![alt text](image-1.png)

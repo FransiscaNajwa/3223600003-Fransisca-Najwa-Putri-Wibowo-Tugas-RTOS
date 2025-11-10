@@ -1,92 +1,60 @@
 #include <Arduino.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+#include "freertos/semphr.h"
 
-// ==================== PIN DEFINISI ====================
-#define BUTTON_PIN 15   // Tombol ke GPIO 15
-#define LED_PIN    5  // LED ke GPIO 2
+// Pin
+#define BUTTON1_PIN 15
+#define BUTTON2_PIN 12
+#define LED_PIN     5
 
-// ==================== VARIABEL GLOBAL ====================
-volatile bool buttonPressed = false;  // Flag ditekan (akses antar core)
-volatile int ledState = LOW;          // Status LED (OFF = 0, ON = 1)
+// Global
+volatile bool ledState = LOW; // status LED
+SemaphoreHandle_t ledMutex;
 
-// ==================== HANDLE UNTUK TASK ====================
-TaskHandle_t TaskCore0;  // Membaca tombol (input)
-TaskHandle_t TaskCore1;  // Mengontrol LED (output)
-
-// ==================== TASK CORE 0: Pembaca Tombol ====================
-void TaskButton(void *pvParameters) {
-  int lastButtonState = HIGH;
-  int currentButtonState = HIGH;
-
-  pinMode(BUTTON_PIN, INPUT_PULLUP);
-
-  Serial.printf("[Core %d] Button Task Started\n", xPortGetCoreID());
-
+// ==================== Core 0 ====================
+void TaskButtonCore0(void *pvParameters) {
+  pinMode(BUTTON1_PIN, INPUT_PULLUP);
   for (;;) {
-    lastButtonState = currentButtonState;
-    currentButtonState = digitalRead(BUTTON_PIN);
-
-    // Jika ada transisi dari HIGH → LOW (tombol ditekan)
-    if (lastButtonState == HIGH && currentButtonState == LOW) {
-      buttonPressed = true;
-      Serial.println("[Core 0] Button Pressed");
+    if (digitalRead(BUTTON1_PIN) == LOW) { // tombol ditekan
+      if (xSemaphoreTake(ledMutex, portMAX_DELAY)) {
+        ledState = !ledState;               // toggle LED
+        digitalWrite(LED_PIN, ledState);
+        Serial.printf("[Core 0] LED toggled: %s\n", ledState ? "ON" : "OFF");
+        xSemaphoreGive(ledMutex);
+      }
+      vTaskDelay(200 / portTICK_PERIOD_MS); // debounce
     }
-
-    vTaskDelay(pdMS_TO_TICKS(50)); // debounce delay
+    vTaskDelay(10 / portTICK_PERIOD_MS);
   }
 }
 
-// ==================== TASK CORE 1: Pengontrol LED ====================
-void TaskLED(void *pvParameters) {
-  pinMode(LED_PIN, OUTPUT);
-  digitalWrite(LED_PIN, ledState);
-
-  Serial.printf("[Core %d] LED Task Started\n", xPortGetCoreID());
-
+// ==================== Core 1 ====================
+void TaskButtonCore1(void *pvParameters) {
+  pinMode(BUTTON2_PIN, INPUT_PULLUP);
   for (;;) {
-    // Jika tombol ditekan (flag dari core 0)
-    if (buttonPressed) {
-      ledState = !ledState;  // toggle LED
-      digitalWrite(LED_PIN, ledState);
-
-      Serial.printf("[Core 1] LED is now %s\n", ledState ? "ON" : "OFF");
-      buttonPressed = false; // reset flag
+    if (digitalRead(BUTTON2_PIN) == LOW) { // tombol ditekan
+      if (xSemaphoreTake(ledMutex, portMAX_DELAY)) {
+        ledState = !ledState;               // toggle LED
+        digitalWrite(LED_PIN, ledState);
+        Serial.printf("[Core 1] LED toggled: %s\n", ledState ? "ON" : "OFF");
+        xSemaphoreGive(ledMutex);
+      }
+      vTaskDelay(200 / portTICK_PERIOD_MS); // debounce
     }
-
-    vTaskDelay(pdMS_TO_TICKS(10)); // waktu idle antar loop
+    vTaskDelay(10 / portTICK_PERIOD_MS);
   }
 }
 
-// ==================== SETUP ====================
 void setup() {
   Serial.begin(115200);
-  delay(1000);
-  Serial.println("=== ESP32-S3 Dual-Core FreeRTOS: Button + LED Demo ===");
+  pinMode(LED_PIN, OUTPUT);
+  digitalWrite(LED_PIN, LOW);
 
-  // Membuat task untuk masing-masing core
-  xTaskCreatePinnedToCore(
-    TaskButton,       // fungsi task
-    "TaskButton",     // nama task
-    2048,             // ukuran stack
-    NULL,             // parameter
-    1,                // prioritas
-    &TaskCore0,       // handle task
-    0                 // dijalankan di core 0
-  );
+  ledMutex = xSemaphoreCreateMutex();
 
-  xTaskCreatePinnedToCore(
-    TaskLED,
-    "TaskLED",
-    2048,
-    NULL,
-    1,
-    &TaskCore1,
-    1                 // dijalankan di core 1
-  );
+  xTaskCreatePinnedToCore(TaskButtonCore0, "Core0Btn", 2048, NULL, 1, NULL, 0);
+  xTaskCreatePinnedToCore(TaskButtonCore1, "Core1Btn", 2048, NULL, 1, NULL, 1);
 }
 
-// ==================== LOOP ====================
-void loop() {
-  // Kosong — semua dijalankan di task
-}
+void loop() {}
