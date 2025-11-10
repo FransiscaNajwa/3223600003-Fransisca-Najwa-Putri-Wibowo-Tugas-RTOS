@@ -1,4 +1,4 @@
-Dual-Core OLED Display
+Dual Core OLED Display
 
 📌 Deskripsi
 Percobaan ini menunjukkan bagaimana ESP32-S3 menjalankan dua task pada dua core untuk menampilkan teks bergantian di layar OLED dengan sinkronisasi Mutex agar tidak terjadi konflik akses I2C.

@@ -1,4 +1,4 @@
-Dual-Core Servo Control
+Dual Core Servo Control
 
 📌 Deskripsi
 Percobaan ini menunjukkan bagaimana ESP32-S3 menjalankan dua task servo secara paralel pada dua core berbeda menggunakan FreeRTOS.

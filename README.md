@@ -30,19 +30,6 @@ Hasil & analisis
 Video demo
 6. Upload seluruh percobaan ke GitHub dan submit link di Ethol
 
-Struktur Folder
-
-
-ESP32S3-MultiCore/
-├── BUZZER/
-├── LED/
-├── OLED/
-├── POTENSIOMETER/
-├── PUSHBUTTON/
-├── ROTARY_ENCODER/
-├── SERVO/
-└── STEPPER/
-
 Tools
 | Komponen  | Detail              |
 | --------- | ------------------- |

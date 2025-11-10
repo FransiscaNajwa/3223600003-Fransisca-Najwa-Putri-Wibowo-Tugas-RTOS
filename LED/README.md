@@ -1,4 +1,5 @@
 Dual Core 3 LED
+
 📘 Deskripsi
 Percobaan ini menunjukkan penggunaan dua core ESP32-S3 untuk menjalankan task secara paralel menggunakan FreeRTOS.
 

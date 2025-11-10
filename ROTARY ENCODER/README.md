@@ -1,4 +1,4 @@
-Dual-Core Rotary Encoder
+Dual Core Rotary Encoder
 
 📌 Deskripsi
 Percobaan ini menggunakan ESP32-S3 dual-core untuk membaca rotary encoder dan push button secara paralel menggunakan FreeRTOS.

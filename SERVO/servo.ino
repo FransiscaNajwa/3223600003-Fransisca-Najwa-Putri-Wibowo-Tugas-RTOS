@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include <Servo.h>
+#include <ESP32Servo.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 

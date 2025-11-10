@@ -1,4 +1,4 @@
-Dual Core Stepper Control
+Dual Core Stepper
 
 📘 Deskripsi
 Percobaan ini menunjukkan penggunaan dua core ESP32-S3 untuk menjalankan task paralel menggunakan FreeRTOS pada aplikasi kontrol motor stepper.
@@ -34,3 +34,5 @@ Output posisi stepper dijaga agar tidak negatif (rentang 0–800).
 
 🎥 Video Demo
 GDrive: https://drive.google.com/drive/folders/10E2MjZ-j4uZHOnst5GjtNRwvEUt9bqUG?usp=sharing 
+
+![alt text](image.png)
