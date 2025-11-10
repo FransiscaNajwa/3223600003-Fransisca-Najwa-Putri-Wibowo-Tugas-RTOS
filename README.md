@@ -1,6 +1,7 @@
-Nama: Fransisca Najwa Putri Wibowo
-NRP: 3223600003
-Kelas: 3 D4 Teknik Komputer A
+Nama: Fransisca Najwa Putri Wibowo  
+NRP: 3223600003  
+Kelas: 3 D4 Teknik Komputer A  
+
 
 Daftar Percobaan (Total 8 Program)
 | No | Percobaan      | Peripheral        |
@@ -40,6 +41,7 @@ ESP32S3-MultiCore/
 ├── SERVO/
 └── STEPPER/
 
+
 Tools
 | Komponen  | Detail              |
 | --------- | ------------------- |
@@ -47,3 +49,5 @@ Tools
 | IDE       | Wokwi / Arduino IDE |
 | Framework | FreeRTOS            |
 | Bahasa    | C / C++             |
+
+Simulasi Wokwi : 
