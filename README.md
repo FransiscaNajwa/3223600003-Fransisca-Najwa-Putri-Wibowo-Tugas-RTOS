@@ -26,7 +26,7 @@ Log pada Serial Monitor
 Foto rangkaian / wiring
 Kode tiap percobaan
 Video demo
-6. Upload seluruh percobaan ke GitHub dan submit link di Ethol
+6. Upload seluruh percobaan ke GitHub
 
 Tools
 | Komponen  | Detail              |
