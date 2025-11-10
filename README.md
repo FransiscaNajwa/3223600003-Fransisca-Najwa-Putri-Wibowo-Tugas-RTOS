@@ -22,11 +22,9 @@ Langkah Percobaan
 4. Amati:
 Output device
 Log pada Serial Monitor
-Performa antar core
 5. Dokumentasikan:
 Foto rangkaian / wiring
 Kode tiap percobaan
-Hasil & analisis
 Video demo
 6. Upload seluruh percobaan ke GitHub dan submit link di Ethol
 
@@ -34,8 +32,8 @@ Tools
 | Komponen  | Detail              |
 | --------- | ------------------- |
 | Board     | ESP32-S3            |
-| IDE       | Wokwi / Arduino IDE |
+| IDE       | Wokwi               |
 | Framework | FreeRTOS            |
 | Bahasa    | C / C++             |
 
-Simulasi Wokwi : https://wokwi.com/projects/447222444492476417 
+Simulasi Wokwi : https://wokwi.com/projects/447222444492476417
