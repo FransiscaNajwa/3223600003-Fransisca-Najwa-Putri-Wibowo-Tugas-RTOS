@@ -26,3 +26,5 @@ Program ini memiliki 2 task:
 
 🎥 Video Demo
 Gdrive: https://drive.google.com/drive/folders/1zJugp3nYugUQ3zeaDMXNZDKSGXHxg3_M?usp=sharing
+
+![alt text](image.png)

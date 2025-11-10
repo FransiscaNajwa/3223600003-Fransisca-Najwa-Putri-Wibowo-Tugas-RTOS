@@ -32,3 +32,5 @@ Percobaan ini menunjukkan bagaimana ESP32-S3 menjalankan dua task secara paralel
 
 🎥 Video Demo
 Gdrive: https://drive.google.com/drive/folders/1-IQlojRIvyesS60SiTbj_doWpA2G7N0t?usp=sharing
+
+![alt text](image.png)

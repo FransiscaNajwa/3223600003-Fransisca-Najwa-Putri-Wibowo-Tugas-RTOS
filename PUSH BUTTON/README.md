@@ -24,3 +24,5 @@ Percobaan ini menunjukkan bagaimana ESP32-S3 menangani input dan output secara p
 
 🎥 Video Demo
 Gdrive: https://drive.google.com/drive/folders/1l86TyPkNUZNA6bz5GUtfGsD7UbBDtODY?usp=sharing 
+
+![alt text](image.png)

@@ -40,3 +40,5 @@ Task menampilkan teks secara bergantian (2s vs 3s interval)
 
 🎥 Video Demo
 Gdrive: https://drive.google.com/drive/folders/1jcI5MgsBtEnXx9m1d-IOBRYAX6cneeiD?usp=sharing 
+
+![alt text](image.png)

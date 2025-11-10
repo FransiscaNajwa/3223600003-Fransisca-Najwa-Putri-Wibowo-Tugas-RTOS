@@ -42,3 +42,5 @@ Setiap perubahan ditampilkan pada Serial Monitor secara realtime
 
 🎥 Video Demo
 Gdrive: https://drive.google.com/drive/folders/1xHsLUh8lWJG1qjUEWygBUBDPuTShIQ0_?usp=sharing
+
+![alt text](image.png)
