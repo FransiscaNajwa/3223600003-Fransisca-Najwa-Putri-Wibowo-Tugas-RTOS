@@ -44,6 +44,7 @@ Setiap perubahan ditampilkan di Serial Monitor secara realtime.
 Gdrive: https://drive.google.com/drive/folders/1xHsLUh8lWJG1qjUEWygBUBDPuTShIQ0_?usp=sharing
 
 Core 0
-![alt text](image-1.png)
+![alt text](image-1.png)  
+
 Core 1
-![alt text](image.png)
+![alt text](image.png)  

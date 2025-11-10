@@ -27,6 +27,7 @@ Percobaan ini menunjukkan bagaimana ESP32-S3 menangani input dan output secara p
 Gdrive: https://drive.google.com/drive/folders/1l86TyPkNUZNA6bz5GUtfGsD7UbBDtODY?usp=sharing 
 
 Core 0
-![alt text](image-1.png)
+![alt text](image-1.png)  
+
 Core 1
-![alt text](image-2.png)
+![alt text](image-2.png)  

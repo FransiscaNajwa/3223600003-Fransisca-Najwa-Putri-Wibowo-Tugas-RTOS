@@ -36,7 +36,8 @@ Task berjalan parallel sehingga servo tampak bergerak maju-mundur tidak linear
 🎥 Video Demo
 Gdrive: https://drive.google.com/drive/folders/1xxA0_UCxWb_t9nFO6QF-OKTMf1O4tiRF?usp=sharing 
 
-Core 0
-![alt text](image-1.png)
-Core 1
-![alt text](image-2.png)
+Core 0  
+![Core 0 Image](image-1.png)
+
+Core 1  
+![Core 1 Image](image-2.png)

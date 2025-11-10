@@ -43,6 +43,7 @@ Task menampilkan teks secara bergantian (2s vs 3s interval)
 Gdrive: https://drive.google.com/drive/folders/1jcI5MgsBtEnXx9m1d-IOBRYAX6cneeiD?usp=sharing 
 
 Core 0
-![alt text](image.png)
+![alt text](image.png)  
+
 Core 1
-![alt text](image-1.png)
+![alt text](image-1.png)  
