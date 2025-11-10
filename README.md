@@ -31,6 +31,8 @@ Video demo
 6. Upload seluruh percobaan ke GitHub dan submit link di Ethol
 
 Struktur Folder
+
+
 ESP32S3-MultiCore/
 ├── BUZZER/
 ├── LED/
@@ -41,7 +43,6 @@ ESP32S3-MultiCore/
 ├── SERVO/
 └── STEPPER/
 
-
 Tools
 | Komponen  | Detail              |
 | --------- | ------------------- |
@@ -50,4 +51,4 @@ Tools
 | Framework | FreeRTOS            |
 | Bahasa    | C / C++             |
 
-Simulasi Wokwi : 
+Simulasi Wokwi : https://wokwi.com/projects/447222444492476417 
