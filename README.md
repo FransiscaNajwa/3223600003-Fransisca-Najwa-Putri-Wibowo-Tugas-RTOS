@@ -1,32 +1,49 @@
-Dual Core Servo
+Nama: Fransisca Najwa Putri Wibowo
+NRP: 3223600003
+Kelas: 3 D4 Teknik Komputer A
 
-📌 Deskripsi
-Percobaan ini menunjukkan bagaimana ESP32-S3 menjalankan dua task servo secara paralel pada dua core berbeda menggunakan FreeRTOS.
-| Core   | Task         | Fungsi                                   |
-| Core 0 | TaskServoCW  | Menggerakkan servo searah jarum jam (CW) |
-| Core 1 | TaskServoCCW | Menggerakkan servo berlawanan (CCW)      |
+Daftar Percobaan (Total 8 Program)
+| No | Percobaan      | Peripheral        |
+| -- | -------------- | ----------------- |
+| 1  | OLED Display   | OLED SSD1306 I2C  |
+| 2  | LED Control    | GPIO Output       |
+| 3  | Buzzer         | PWM Speaker       |
+| 4  | Servo Motor    | PWM               |
+| 5  | Push Button    | GPIO Input        |
+| 6  | Potensiometer  | ADC Input         |
+| 7  | Rotary Encoder | CLK / DT / Button |
+| 8  | Stepper Motor  | Step/Dir Driver   |
 
-🛠️ Hardware Setup
-| Komponen | Pin      | Mode   |
-| Servo    | GPIO 15  | Output |
-| Power    | 5V + GND | —      |
+Langkah Percobaan
+1. Hubungkan peripheral ke ESP32-S3 sesuai diagram wiring
+2. Buat program terpisah untuk tiap modul/peripheral
+3. Jalankan task di Core-0 dan Core-1 menggunakan FreeRTOS
+4. Amati:
+Output device
+Log pada Serial Monitor
+Performa antar core
+5. Dokumentasikan:
+Foto rangkaian / wiring
+Kode tiap percobaan
+Hasil & analisis
+Video demo
+6. Upload seluruh percobaan ke GitHub dan submit link di Ethol
 
-📎 Koneksi Servo
-Merah → 5V
-Coklat/Hitam → GND
-Kuning/Putih → GPIO 15
+Struktur Folder
+ESP32S3-MultiCore/
+├── BUZZER/
+├── LED/
+├── OLED/
+├── POTENSIOMETER/
+├── PUSHBUTTON/
+├── ROTARY_ENCODER/
+├── SERVO/
+└── STEPPER/
 
-🧠 Cara Kerja
-Core 0 mengirim sinyal posisi servo bertahap 0° → 180°
-Core 1 mengirim sinyal posisi servo bertahap 180° → 0°
-Karena keduanya memakai servo yang sama, terjadi interleaving/freeRTOS scheduling
-
-▶️ Langkah Percobaan
-| No | Langkah               | Hasil yang Diharapkan                 |
-| 1  | Upload program        | Serial menampilkan pesan task         |
-| 2  | Lihat servo           | Servo bergerak bolak-balik            |
-| 3  | Perhatikan pergerakan | Gerakan tidak linear → efek dual core |
-| 4  | Cek Serial Monitor    | Log posisi servo dari kedua core      |
-
-🎥 Video Demo
-Gdrive: https://drive.google.com/drive/folders/1xxA0_UCxWb_t9nFO6QF-OKTMf1O4tiRF?usp=sharing 
+Tools
+| Komponen  | Detail              |
+| --------- | ------------------- |
+| Board     | ESP32-S3            |
+| IDE       | Wokwi / Arduino IDE |
+| Framework | FreeRTOS            |
+| Bahasa    | C / C++             |
