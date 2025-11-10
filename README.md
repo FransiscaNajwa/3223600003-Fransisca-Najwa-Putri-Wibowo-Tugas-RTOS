@@ -1,6 +1,7 @@
-Nama: Fransisca Najwa Putri Wibowo  
-NRP: 3223600003  
-Kelas: 3 D4 Teknik Komputer A  
+Nama : Fransisca Najwa Putri Wibowo
+Kelas: 3 D4 Teknik Komputer A
+NRP : 3223600003
+
 
 
 Daftar Percobaan (Total 8 Program)
