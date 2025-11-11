@@ -1,6 +1,6 @@
 Dual Core Rotary Encoder
 
-📌 Deskripsi
+📌 Deskripsi  
 Percobaan ini menggunakan ESP32-S3 dual-core untuk membaca rotary encoder dan push button secara paralel menggunakan FreeRTOS.
 | Core   | Task        | Fungsi                            |
 | ------ | ----------- | --------------------------------- |
@@ -24,7 +24,7 @@ Percobaan ini menggunakan ESP32-S3 dual-core untuk membaca rotary encoder dan pu
 | +           | VCC         | 3.3V         |
 | GND         | Ground      | GND          |
 
-🧠 Cara Kerja Sistem
+🧠 Cara Kerja Sistem  
 Core 0 membaca sinyal rotary encoder menggunakan metode full quadrature:
     Putar CW → nilai meningkat
     Putar CCW → nilai menurun
@@ -32,7 +32,7 @@ Core 1 memonitor tombol push (SW encoder):
 Tekan tombol → menampilkan nilai encoder di Serial Monitor
 Setiap perubahan ditampilkan di Serial Monitor secara realtime.
 
-▶️ Langkah Percobaan
+▶️ Langkah Percobaan  
 | No | Langkah              | Hasil yang Diharapkan             |
 | -: | -------------------- | --------------------------------- |
 |  1 | Upload program       | Serial tampilkan pesan task start |
