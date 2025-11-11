@@ -25,7 +25,7 @@ Program ini memiliki 2 task:
 |  4 | Buka Serial Monitor            | Terdapat log `[Core 0]` dan `[Core 1]` menunjukkan task berjalan paralel |
 
 🎥 Video Demo
-Gdrive: https://drive.google.com/drive/folders/1zJugp3nYugUQ3zeaDMXNZDKSGXHxg3_M?usp=sharing
+![Demo LED](LED.gif)
 
 Core 1
 ![alt text](image.png)  
