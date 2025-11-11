@@ -1,6 +1,6 @@
 Dual Core PushButton
 
-📌 Deskripsi
+📌 Deskripsi  
 Percobaan ini menunjukkan bagaimana ESP32-S3 menangani input dan output secara paralel menggunakan dua core:
 | Core   | Task            | Fungsi                        |
 | ------ | --------------- | ----------------------------- |
@@ -29,5 +29,5 @@ Percobaan ini menunjukkan bagaimana ESP32-S3 menangani input dan output secara p
 Core 0
 ![alt text](image-1.png)  
 
-Core 1
+Core 1  
 ![alt text](image-2.png)   
