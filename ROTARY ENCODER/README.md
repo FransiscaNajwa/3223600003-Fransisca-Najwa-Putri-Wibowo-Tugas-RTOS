@@ -41,7 +41,7 @@ Setiap perubahan ditampilkan di Serial Monitor secara realtime.
 |  4 | Buka Serial Monitor  | Terlihat output dari kedua core   |
 
 🎥 Video Demo
-Gdrive: https://drive.google.com/drive/folders/1xHsLUh8lWJG1qjUEWygBUBDPuTShIQ0_?usp=sharing
+![Demo ROTARYENCODER](Encode-1.gif)
 
 Core 0
 ![alt text](image-1.png)  

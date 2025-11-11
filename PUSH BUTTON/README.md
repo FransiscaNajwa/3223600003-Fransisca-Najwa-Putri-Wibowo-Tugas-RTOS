@@ -24,7 +24,7 @@ Percobaan ini menunjukkan bagaimana ESP32-S3 menangani input dan output secara p
 |  5 | Cek Serial Monitor         | Log menampilkan core mana yang menyalakan LED |
 
 🎥 Video Demo
-Gdrive: https://drive.google.com/drive/folders/1l86TyPkNUZNA6bz5GUtfGsD7UbBDtODY?usp=sharing 
+![Demo PUSHBUTTON](pushbutton-2.gif)
 
 Core 0
 ![alt text](image-1.png)  

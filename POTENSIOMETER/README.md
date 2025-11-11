@@ -31,6 +31,6 @@ Percobaan ini menunjukkan bagaimana ESP32-S3 menjalankan dua task secara paralel
 |  5 | Validasi multicore  | Log menunjukkan **Core 0** & **Core 1** berjalan paralel |
 
 🎥 Video Demo
-Gdrive: https://drive.google.com/drive/folders/1-IQlojRIvyesS60SiTbj_doWpA2G7N0t?usp=sharing
+![Demo POTENSIOMETER](POTENSIOMETER.gif)
 
 ![alt text](image.png)

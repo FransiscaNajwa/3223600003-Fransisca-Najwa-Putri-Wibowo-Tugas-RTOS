@@ -34,7 +34,7 @@ Task berjalan parallel sehingga servo tampak bergerak maju-mundur tidak linear
 |  4 | Serial Monitor         | Log `Core 0` & `Core 1` bergantian                 |
 
 🎥 Video Demo
-Gdrive: https://drive.google.com/drive/folders/1xxA0_UCxWb_t9nFO6QF-OKTMf1O4tiRF?usp=sharing 
+![Demo SERVO](SERVO.gif)
 
 Core 0  
 ![Core 0 Image](image-1.png)

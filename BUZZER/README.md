@@ -24,7 +24,7 @@ Percobaan ini mendemonstrasikan penggunaan dua core ESP32-S3 untuk menghasilkan 
 |  5 | Validasi multicore          | Log menunjukkan task berjalan di Core 0 & Core 1 |
 
 🎥 Video Demo
-Gdrive: https://drive.google.com/drive/folders/1K_wdP9ttsc-NksF2BDL43nwUQEU0aomJ?usp=sharing
+![Demo BUZZER](BUZZER.gif)
 
 Core 1
 ![alt text](image.png)

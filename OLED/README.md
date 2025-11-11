@@ -40,7 +40,7 @@ Task menampilkan teks secara bergantian (2s vs 3s interval)
 |  4 | Amati interval tampilan  | Core0 → 2s, Core1 → 3s                     |
 
 🎥 Video Demo
-Gdrive: https://drive.google.com/drive/folders/1jcI5MgsBtEnXx9m1d-IOBRYAX6cneeiD?usp=sharing 
+![Demo OLED](OLED.gif)
 
 Core 0
 ![alt text](image.png)  

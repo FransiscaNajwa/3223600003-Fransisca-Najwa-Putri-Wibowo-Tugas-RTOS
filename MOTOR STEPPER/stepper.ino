@@ -3,75 +3,80 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
-// Stepper Pins
+// ================== Konfigurasi Pin ==================
 #define STEP_PIN 18
 #define DIR_PIN 19
 #define EN_PIN 20
 
-// Button Pin
-#define BTN_PIN 12
-
-// Stepper object (driver mode)
+// ================== Objek Stepper ==================
 AccelStepper stepper(AccelStepper::DRIVER, STEP_PIN, DIR_PIN);
 
-// Flag & state
-volatile bool motorDirection = true; // true = kanan, false = kiri
-bool lastBtn = HIGH;
-
-// Batas posisi
+// ================== Batas Posisi ==================
 const long MAX_POS = 800;
 const long MIN_POS = 0;
 
-// Task handles
-TaskHandle_t TaskStepper;
-TaskHandle_t TaskButton;
+// ================== Variabel Global ==================
+volatile bool motorDirection = true; // true = kanan, false = kiri
 
+// ================== Task Handle ==================
+TaskHandle_t TaskStepper;
+TaskHandle_t TaskControl;
+
+// ================== Task Stepper (Core 1) ==================
 void taskStepper(void *pvParameters) {
+  Serial.printf("[Core %d] Task Stepper berjalan\n", xPortGetCoreID());
+
   while (1) {
-    stepper.run(); 
-    vTaskDelay(1);
+    stepper.run(); // Jalankan motor
+    vTaskDelay(1); // Supaya FreeRTOS tetap responsif
   }
 }
 
-void taskButton(void *pvParameters) {
+// ================== Task Kontrol Arah (Core 0) ==================
+void taskControl(void *pvParameters) {
+  Serial.printf("[Core %d] Task Control berjalan\n", xPortGetCoreID());
+
   while (1) {
-    bool readBtn = digitalRead(BTN_PIN);
+    long currentPos = stepper.currentPosition();
 
-    if (readBtn == LOW && lastBtn == HIGH) {
-      motorDirection = !motorDirection;  
-
-      long currentPos = stepper.currentPosition();
-      long targetPos = (motorDirection) ? MAX_POS : MIN_POS;
-
-      stepper.moveTo(targetPos);
-
-      Serial.print("Arah: ");
-      Serial.println(motorDirection ? ">> Kanan" : "<< Kiri");
-
-      vTaskDelay(200 / portTICK_PERIOD_MS);
+    // Jika sudah mencapai batas posisi, ubah arah
+    if (motorDirection && currentPos >= MAX_POS) {
+      motorDirection = false;
+      stepper.moveTo(MIN_POS);
+      Serial.println(">> Berubah ke arah KIRI");
+    } 
+    else if (!motorDirection && currentPos <= MIN_POS) {
+      motorDirection = true;
+      stepper.moveTo(MAX_POS);
+      Serial.println("<< Berubah ke arah KANAN");
     }
 
-    lastBtn = readBtn;
-
-    vTaskDelay(10 / portTICK_PERIOD_MS);
+    vTaskDelay(pdMS_TO_TICKS(100)); // Cek arah tiap 100 ms
   }
 }
 
+// ================== Setup ==================
 void setup() {
   Serial.begin(115200);
+  delay(1000);
+  Serial.println("=== FreeRTOS Dual-Core Stepper Demo ===");
 
   pinMode(EN_PIN, OUTPUT);
-  digitalWrite(EN_PIN, LOW);
-
-  pinMode(BTN_PIN, INPUT_PULLUP);
+  digitalWrite(EN_PIN, LOW); // aktifkan driver stepper
 
   stepper.setMaxSpeed(900);
   stepper.setAcceleration(400);
+  stepper.moveTo(MAX_POS); // mulai ke arah kanan
 
+  // Task untuk kontrol stepper di Core 1
   xTaskCreatePinnedToCore(taskStepper, "StepperTask", 4096, NULL, 2, &TaskStepper, 1);
-  xTaskCreatePinnedToCore(taskButton, "ButtonTask", 4096, NULL, 1, &TaskButton, 0);
 
-  Serial.println("Sistem Siap — Tekan tombol untuk ganti arah");
+  // Task untuk ubah arah otomatis di Core 0
+  xTaskCreatePinnedToCore(taskControl, "ControlTask", 4096, NULL, 1, &TaskControl, 0);
+
+  Serial.println("Semua task telah dibuat!");
 }
 
-void loop() {}
+void loop() {
+  // Kosong, semua dijalankan oleh FreeRTOS
+}
