@@ -1,6 +1,6 @@
 Dual Core Servo Control
 
-📌 Deskripsi
+📌 Deskripsi    
 Percobaan ini menunjukkan bagaimana ESP32-S3 menjalankan dua task servo secara paralel pada dua core berbeda menggunakan FreeRTOS.
 | Core   | Task         | Fungsi                                              |
 | ------ | ------------ | --------------------------------------------------- |
@@ -20,10 +20,10 @@ Percobaan ini menunjukkan bagaimana ESP32-S3 menjalankan dua task servo secara p
 | VCC         | Merah        | 5V       |
 | GND         | Hitam/Coklat | GND      |
 
-🧠 Cara Kerja Sistem
-Core 0 mengirim perintah posisi servo naik bertahap
-Core 1 mengirim perintah posisi servo turun bertahap
-Task berjalan parallel sehingga servo tampak bergerak maju-mundur tidak linear
+🧠 Cara Kerja Sistem    
+Core 0 mengirim perintah posisi servo naik bertahap    
+Core 1 mengirim perintah posisi servo turun bertahap    
+Task berjalan parallel sehingga servo tampak bergerak maju-mundur tidak linear  
 
 ▶️ Langkah Percobaan
 | No | Langkah                | Hasil Diharapkan                                   |
@@ -39,5 +39,5 @@ Task berjalan parallel sehingga servo tampak bergerak maju-mundur tidak linear
 Core 0  
 ![Core 0 Image](image-1.png)
 
-Core 1  
+Core 1   
 ![Core 1 Image](image-2.png)

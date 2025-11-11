@@ -1,6 +1,6 @@
 Dual Core Potentiometer
 
-📌 Deskripsi
+📌 Deskripsi  
 Percobaan ini menunjukkan bagaimana ESP32-S3 menjalankan dua task secara paralel pada dua core berbeda menggunakan FreeRTOS:
 | Core   | Fungsi                                      |
 | ------ | ------------------------------------------- |

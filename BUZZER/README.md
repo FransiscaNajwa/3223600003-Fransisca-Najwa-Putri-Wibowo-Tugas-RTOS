@@ -1,6 +1,6 @@
 Dual Core Buzzer
 
-📌 Deskripsi
+📌 Deskripsi  
 Percobaan ini mendemonstrasikan penggunaan dua core ESP32-S3 untuk menghasilkan pola bunyi buzzer berbeda secara paralel:
 | Core   | Tugas         | Frekuensi | Pola Bunyi         |
 | ------ | ------------- | --------: | ------------------ |

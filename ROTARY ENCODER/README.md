@@ -28,7 +28,7 @@ Percobaan ini menggunakan ESP32-S3 dual-core untuk membaca rotary encoder dan pu
 Core 0 membaca sinyal rotary encoder menggunakan metode full quadrature:  
 - Putar CW → nilai meningkat  
 - Putar CCW → nilai menurun  
-Core 1 memonitor tombol push (SW encoder): Tekan tombol → menampilkan nilai encoder di Serial Monitor  
+Core 1 memonitor tombol push (SW encoder): Tekan tombol → menampilkan nilai encoder di Serial Monitor   
 Setiap perubahan ditampilkan di Serial Monitor secara realtime.  
 
 ▶️ Langkah Percobaan  
@@ -42,8 +42,8 @@ Setiap perubahan ditampilkan di Serial Monitor secara realtime.
 🎥 Video Demo
 ![Demo ROTARYENCODER](Encode_1.gif)
 
-Core 0
+Core 0  
 ![alt text](image-1.png)  
 
-Core 1
+Core 1  
 ![alt text](image.png)  

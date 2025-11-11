@@ -1,6 +1,6 @@
 Dual Core OLED Display
 
-📌 Deskripsi
+📌 Deskripsi  
 Percobaan ini menunjukkan bagaimana ESP32-S3 menjalankan dua task pada dua core untuk menampilkan teks bergantian di layar OLED dengan sinkronisasi Mutex agar tidak terjadi konflik akses I2C.
 | Core   |  Task | Fungsi                             |
 | ------ | ----: | ---------------------------------- |
@@ -25,11 +25,11 @@ OLED digunakan sebagai output yang diakses bergantian oleh kedua task melalui xS
 | VCC      | 3.3V     |
 | GND      | GND      |
 
-🧠 Cara Kerja
-Core 0 dan Core 1 mencoba menulis ke OLED
-Hanya task yang berhasil mengambil mutex yang boleh menulis
-Menghindari crash / overlap pada display I2C
-Task menampilkan teks secara bergantian (2s vs 3s interval)
+🧠 Cara Kerja  
+Core 0 dan Core 1 mencoba menulis ke OLED  
+Hanya task yang berhasil mengambil mutex yang boleh menulis  
+Menghindari crash / overlap pada display I2C  
+Task menampilkan teks secara bergantian (2s vs 3s interval)  
 
 ▶️ Langkah Percobaan
 | No | Langkah                  | Hasil yang Diharapkan                      |
@@ -42,8 +42,8 @@ Task menampilkan teks secara bergantian (2s vs 3s interval)
 🎥 Video Demo
 ![Demo OLED](OLED.gif)
 
-Core 0
+Core 0  
 ![alt text](image.png)  
 
-Core 1
+Core 1  
 ![alt text](image-1.png)  
