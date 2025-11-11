@@ -25,12 +25,11 @@ Percobaan ini menggunakan ESP32-S3 dual-core untuk membaca rotary encoder dan pu
 | GND         | Ground      | GND          |
 
 🧠 Cara Kerja Sistem  
-Core 0 membaca sinyal rotary encoder menggunakan metode full quadrature:
-    Putar CW → nilai meningkat
-    Putar CCW → nilai menurun
-Core 1 memonitor tombol push (SW encoder):
-Tekan tombol → menampilkan nilai encoder di Serial Monitor
-Setiap perubahan ditampilkan di Serial Monitor secara realtime.
+Core 0 membaca sinyal rotary encoder menggunakan metode full quadrature:  
+- Putar CW → nilai meningkat  
+- Putar CCW → nilai menurun  
+Core 1 memonitor tombol push (SW encoder): Tekan tombol → menampilkan nilai encoder di Serial Monitor  
+Setiap perubahan ditampilkan di Serial Monitor secara realtime.  
 
 ▶️ Langkah Percobaan  
 | No | Langkah              | Hasil yang Diharapkan             |
@@ -41,7 +40,7 @@ Setiap perubahan ditampilkan di Serial Monitor secara realtime.
 |  4 | Buka Serial Monitor  | Terlihat output dari kedua core   |
 
 🎥 Video Demo
-![Demo ROTARYENCODER](Encode-1.gif)
+![Demo ROTARYENCODER](Encode_1.gif)
 
 Core 0
 ![alt text](image-1.png)  
